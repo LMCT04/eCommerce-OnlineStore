@@ -21,7 +21,6 @@ module.exports = (sequelize) => {
         { timestamps: false }
     );
 
-    //prueba
 
     Category.associate = (models) => {
         Category.hasMany(models.SubCategory, {

@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 
-// Exportamos una funcion donde definimos el modelo y le pasamos
-// la conexion con sequelize
+// Exportamos una función donde definimos el modelo y le pasamos
+// la conexión con sequelize
 
 module.exports = (sequelize) => {
     const SubCategory = sequelize.define(
@@ -20,8 +20,6 @@ module.exports = (sequelize) => {
         },
         { timestamps: false }
     );
-
-    //prueba
 
     SubCategory.associate = (models) => {
         SubCategory.belongsTo(models.Category, {
