@@ -69,6 +69,8 @@ Category.hasMany(SubCategory)
 SubCategory.belongsTo(Category)
 Category.hasMany(Product)
 Product.belongsTo(Category)
+SubCategory.hasMany(Product)
+Product.belongsTo(SubCategory)
 
 module.exports = {
     ...sequelize.models,

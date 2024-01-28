@@ -1,0 +1,25 @@
+[
+    {
+        "name": "luciano",
+        "lastname": "Chirito",
+        "image": "https://s3.amazonaws.com/uifaces/faces/twitter/BroumiYoussef/128.jpg",
+        "userName": "lmct04",
+        "mail": "lmct04@gmail.com",
+        "password": "12345678"
+    },
+
+    {
+        "name": "tecnología"
+    },
+
+    {
+        "name": "electrodomésticos"
+    },
+
+    {
+        "name": "estufa",
+        "image": "https://s3.amazonaws.com/uifaces/faces/twitter/BroumiYoussef/128.jpg",
+        "description": "Descubre la elegancia térmica con nuestra estufa moderna y eficiente. Su diseño contemporáneo y controles intuitivos brindan calor reconfortante, convirtiendo tu hogar en un espacio acogedor con estilo duradero.",
+        "price": "10.80"
+    }
+]
