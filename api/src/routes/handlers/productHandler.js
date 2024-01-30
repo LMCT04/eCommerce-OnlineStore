@@ -11,32 +11,64 @@
 */
 
 //----------------------------------------------------------------------------------->
-const { allProducts, createProducts } = require("./controllers/product");
+const {
+    allProducts,
+    createProducts,
+    updateDescription,
+    updateName,
+    updatePrice,
+    updateStatus,
+    productById
+} = require("./controllers/product");
 // Declaramos las funciones para las distintos pedidos HTTP en las cuales usaremos los controladores correspondientes
 
 const G_allP = async (req, res) => {
     try {
-        console.log('HANDLER PRODUCT')
         const response = await allProducts();
         res.status(200).send(response);
     } catch (error) {
-        res.status(400).json("Error GET all products");
+        res.status(404).json({ error: error.message });
     }
 };
 
 const G_idP = async (req, res) => {
+    const { id } = req.params;
+
     try {
-        res.status(200).json("GET products by id");
+        const response = await productById(id);
+        res.status(200).send(response);
     } catch (error) {
-        res.status(400).json("Error GET products by id");
+        res.status(404).json({ error: error.message });
     }
 };
 
 const P_updateP = async (req, res) => {
+    const { status, name, price, description, id } = req.body
+    console.log("handler", status, id);
     try {
-        res.status(200).json("PUT update products");
+        const product = await productById(id)
+
+        if (!product) {
+            throw new Error('Error, Product not found');
+        }
+        if (typeof status !== 'undefined') {
+            console.log("pasamos por aca");
+            await updateStatus(id, status);
+        }
+        if (name) {
+            await updateName(id, name);
+        }
+        if (price) {
+            await updatePrice(id, price);
+        }
+        if (description) {
+            await updateDescription(id, description);
+        }
+
+        const updateProduct = await productById(id);
+        return res.json(updateProduct);
     } catch (error) {
-        res.status(400).json("Error PUT update products");
+        res.status(404).json({ error: error.message });
     }
 };
 
@@ -54,7 +86,7 @@ const PST_createP = async (req, res) => {
         await createProducts(newProduct);
         res.status(200).send({ message: "Product created successfully" });
     } catch (error) {
-        res.status(400).json("Error POST create products");
+        res.status(404).json({ error: error.message });
     }
 };
 

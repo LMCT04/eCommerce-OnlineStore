@@ -38,6 +38,7 @@ const createProducts = async (newProduct) => {
 
         // Creamos una variable
         let productCategoryId;
+        let  productSubCategoryId
         // Si existe categoría y sub categoría filtramos según... 
         if (newProduct.category && newProduct.subcategory && typeof newProduct.subcategory === 'string') {
             // Buscamos la categoría en la base de datos según el nombre
@@ -50,6 +51,7 @@ const createProducts = async (newProduct) => {
             const existingSubcategory = await SubCategory.findOne({
                 where: { name: newProduct.subcategory, CategoryId: productCategoryId }
             })
+            productSubCategoryId = existingSubcategory.id
 
             if(!existingSubcategory) {
                 throw new Error('Error, The subcategory is not associated with the category entered');
@@ -66,7 +68,6 @@ const createProducts = async (newProduct) => {
                 image: newProduct.image,
                 description: newProduct.description,
                 price: newProduct.price,
-                category: newProduct.category,
             }
         });
 
@@ -74,10 +75,14 @@ const createProducts = async (newProduct) => {
             throw new Error('The Product already exists');
         }
 
-        if (newProduct.subcategory){
-            await newProduct2.setSubcategory(newProduct.subcategory);
+        if (newProduct.category) {
+            await newProduct2.setCategory(productCategoryId);
         }
-        console.log(newProduct2);
+
+        if (newProduct.subcategory) {
+            await newProduct2.setSubCategory(productSubCategoryId);
+        }
+
         return newProduct2;
 }
 

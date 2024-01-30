@@ -21,22 +21,22 @@ const {
     createUser,
     allUsers,
     userByMail,
+    userByFullName
 } = require("./controllers/user");
 
 const G_allU = async (req, res) => {
+    const {name, lastname} = req.body
     try {
-        const response = await allUsers();
+        let response
+        if (name || lastname) {
+            response = await userByFullName(name, lastname)
+        } else {
+            response = await allUsers();
+        }
         res.status(200).send(response);
     } catch (error) {
+        console.log(error);
         res.status(400).json("Error GET all users");
-    }
-};
-
-const G_idU = async (req, res) => {
-    try {
-        res.status(200).json("GET user by id");
-    } catch (error) {
-        res.status(400).json("Error GET user by id");
     }
 };
 
@@ -88,7 +88,6 @@ const PST_createU = async (req, res) => {
 
 module.exports = {
     G_allU,
-    G_idU,
     P_updateU,
     PST_createU,
 };

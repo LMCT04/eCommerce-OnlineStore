@@ -5,6 +5,7 @@ const { updateUsername } = require('./updateUsername')
 const { createUser } = require('./createUser')
 const { allUsers } = require('./allUsers')
 const { userByMail } = require('./userByMail')
+const { userByFullName } = require('./userByFullname')
 
 module.exports = {
     updateFullname,
@@ -13,6 +14,7 @@ module.exports = {
     updateUsername,
     createUser,
     allUsers,
-    userByMail
+    userByMail,
+    userByFullName
 };
 
