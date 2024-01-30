@@ -4,7 +4,7 @@ const router = Router();
 const userRoute = require("./userRoute");
 const categoryRoute = require('./categoryRoute')
 const subcategoryRoute = require('./subcategoryRoute')
-const productRoute = require('./categoryRoute')
+const productRoute = require('./productRoute')
 
 router.use("/user", userRoute);
 router.use('/category', categoryRoute)

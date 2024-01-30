@@ -17,7 +17,7 @@ const userByMail = async (mail) => {
             role: user[0].role,
         }
     } catch (error) {
-        throw new Error('Error getting user')
+        throw new Error('Error getting user by mail')
     }
 }
 

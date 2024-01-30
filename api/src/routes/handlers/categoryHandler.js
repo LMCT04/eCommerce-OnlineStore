@@ -12,33 +12,45 @@
 
 //----------------------------------------------------------------------------------->
 // Importamos los controller necesarios para los pedidos HTTP
-const { allCategories, createCategory } = require('./controllers/category')
+const {
+    allCategories,
+    createCategory,
+    categoryById,
+    categoryByName,
+} = require("./controllers/category");
 
 // Declaramos las funciones para las distintos pedidos HTTP en las cuales usaremos los controladores correspondientes
 const G_allC = async (req, res) => {
+    const { name } = req.query;
+
     try {
-        const response = await allCategories();
+        const response = name
+            ? await categoryByName(name)
+            : await allCategories();
         res.status(200).send(response);
     } catch (error) {
-        res.status(400).json("Error GET all categories");
+        res.status(404).json({ error: error.message });
     }
 };
 
 const G_idC = async (req, res) => {
+    const { id } = req.params;
+
     try {
-        res.status(200).json("GET category by id");
+        const response = await categoryById(id);
+        res.status(200).send(response);
     } catch (error) {
-        res.status(400).json("Error GET category by id");
+        res.status(404).json({ error: error.message });
     }
 };
 
 const PST_createC = async (req, res) => {
-    const { name } = req.body
+    const { name } = req.body;
     try {
         await createCategory(name);
-        res.status(200).send({ message: "Category created successfully"});
+        res.status(200).send({ message: "Category created successfully" });
     } catch (error) {
-        res.status(400).json("Error POST create category");
+        res.status(404).json({ error: error.message });
     }
 };
 
