@@ -1,0 +1,53 @@
+.background {
+    height: 15dvh;
+    width: 100%;
+    border-bottom: 1px solid black;
+    background: rgb(214, 207, 207);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav{
+    background-color: green;
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.boxImg{
+    background: blue;
+    width: 20%;
+    aspect-ratio: 1/1;
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    background-color: brown;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title{
+    /* background: cyan; */
+    padding: 0 2%;
+}
+
+.icons{
+    /* background: yellowgreen; */
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+}
