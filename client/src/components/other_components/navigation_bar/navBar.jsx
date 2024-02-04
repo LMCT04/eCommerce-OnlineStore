@@ -1,36 +1,72 @@
 import React from "react";
 import style from "./navBar.module.css";
-import { NavLink } from "react-router-dom";
-import { AppBar } from "@mui/material";
-import { Menu, Search } from "@mui/icons-material";
+import { NavLink, useNavigate } from "react-router-dom";
+import { AppBar, Menu, MenuItem } from "@mui/material";
+import { Menu as IconMenu, Search } from "@mui/icons-material";
+import logo from "../../../assets/LogoBag1.png";
+import { useState } from "react";
 
 const NavBar = () => {
+    const navigate = useNavigate();
+    const [anchorEl, setAnchorEl] = useState(null);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    const handleDashboardClick = () => {
+        navigate('/dashboard');
+        setAnchorEl(null);
+    };
+
     return (
         <>
             <div className={style.background}>
                 <AppBar
                     sx={{
-                        backgroundColor: "red",
+                        backgroundColor: "#5A03D5",
                         height: "70%",
                         width: "100%",
                         position: "static",
                         display: "flex",
-                        flexDirection:'row',
-                        alignItems:'center',
-                        justifyContent:'space-around'
+                        flexDirection: "row",
+                        alignItems: "center",
                     }}
                 >
-                    <div className={style.boxImg}>
-                        LOGO
+                    <div className={style.menuCont}>
+                        <button
+                            aria-controls="simple-menu"
+                            aria-haspopup="true"
+                            onClick={handleClick}
+                            className={style.btn}
+                        >
+                            <IconMenu sx={{fontSize:'2.5rem'}} />
+                        </button>
+                        <Menu
+                            id="simple-menu"
+                            anchorEl={anchorEl}
+                            open={Boolean(anchorEl)}
+                            onClose={handleClose}
+                        >
+                            <MenuItem onClick={handleClose}> Profile </MenuItem>
+                            <MenuItem onClick={handleClose}> Settings </MenuItem>
+                            <MenuItem onClick={handleDashboardClick}> Dashboard </MenuItem>
+                        </Menu>
                     </div>
-                    <div className={style.title}>
-                        <h1>
-                            Online Store
-                        </h1>
+                    <div className={style.mark}>
+                        <div className={style.boxImg}>
+                            <img src={logo} alt="logo" className={style.img} />
+                        </div>
+                        <div className={style.title}>
+                            <h1>Online Store</h1>
+                        </div>
                     </div>
                     <div className={style.icons}>
-                        <Search fontSize="large" />
-                        <Menu fontSize="large" />
+                        <Search sx={{fontSize:'2.5rem'}} />
                     </div>
                 </AppBar>
                 <nav className={style.nav}>
