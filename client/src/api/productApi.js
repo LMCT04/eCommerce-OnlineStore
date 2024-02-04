@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const productApi = axios.create({
-    baseURL: "http://localhost:1234/product",
+    baseURL: "https://onlinestore-34p3.onrender.com/product",
 })
