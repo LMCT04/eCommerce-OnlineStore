@@ -7,6 +7,7 @@ import Footer from "./components/other_components/footer/footer.jsx";
 function App() {
     const location = useLocation();
     const showNavBar = location.pathname !== "/";
+
     return (
         <div className="App">
             <header>{showNavBar && <NavBar />}</header>

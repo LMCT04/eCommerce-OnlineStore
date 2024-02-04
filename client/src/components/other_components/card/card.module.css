@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+.background {
+    background: #bea6ff;
+    height: 55dvh;
+    margin: 5% 0;
+    margin-bottom: 15%;
+    font-family: 'DM Sans', sans-serif;
+
+}
+
+.cardHeader {
+    background: #843dff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1% 0;
+}
+
+h2 {
+    margin: 0;
+    width: 92%;
+    text-align: start;
+}
+
+.cardBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgCont {
+    background: #9f75ff;
+    width: 92%;
+    aspect-ratio: 2/1.2;
+    margin: 4% 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* img {} */
+
+.cardCont {
+    width: 92%;
+}
+
+b {
+    margin: 0;
+    font-size: 3rem;
+}
+

@@ -8,21 +8,21 @@ const Footer = () => {
             <footer className={style.background}>
                 <section className={style.info}>
                     <ul className={style.list}>
-                        <h3>Lista</h3>
+                        <h2>Lista</h2>
                         <li className={style.item}> Items List </li>
                         <li className={style.item}> Items List </li>
                         <li className={style.item}> Items List </li>
                         <li className={style.item}> Items List </li>
                     </ul>
                     <ul className={style.list}>
-                        <h3>Lista</h3>
+                        <h2>Lista</h2>
                         <li className={style.item}> Items List </li>
                         <li className={style.item}> Items List </li>
                         <li className={style.item}> Items List </li>
                         <li className={style.item}> Items List </li>
                     </ul>
                     <ul className={style.list}>
-                        <h3>Lista</h3>
+                        <h2>Lista</h2>
                         <li className={style.item}> Items List </li>
                         <li className={style.item}> Items List </li>
                         <li className={style.item}> Items List </li>
@@ -50,7 +50,9 @@ const Footer = () => {
                         <GitHub fontSize="large" />
                     </div>
                 </section>
-                <p>Copyright 2024 Online Store. All rights reserved.</p>
+                <p className={style.p} >
+                    Copyright 2024 Online Store. All rights reserved.
+                </p>
             </footer>
         </>
     );
