@@ -1,0 +1,36 @@
+.acc {
+    color: var(--white-color) !important;
+}
+
+.summary {
+    background: var(--main-color) !important;
+    padding: 0 !important;
+}
+
+.name{
+    margin: 0 2%;
+    font-weight: 400;
+    width: 76%;
+}
+
+.details {
+    background: var(--grey-light);
+    color: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgBox {
+    height: 15dvh;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img {
+    height: 90%;
+    width: 90%;
+    border: 1px solid var(--grey-color);
+}

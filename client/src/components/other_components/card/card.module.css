@@ -39,7 +39,10 @@ h2 {
     justify-content: center;
 }
 
-/* img {} */
+.img {
+    height: 100%;
+    width: 100%;
+} 
 
 .cardCont {
     width: 92%;

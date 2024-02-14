@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+.btnPrimary {
+    font-family: "DM Sans", sans-serif;
+    background: rgb(75, 5, 173);
+    background: linear-gradient(
+        90deg,
+        rgba(75, 5, 173, 1) 0%,
+        rgba(121, 22, 255, 1) 51%,
+        rgba(132, 61, 255, 1) 83%
+    );
+    color: #d9ceff;
+    border: 0;
+    border-radius: 1.5rem;
+    padding: 2.5%;
+}
+
+.h2 {
+    width: auto;
+}
+
+.btnSecondary {
+    font-family: "DM Sans", sans-serif;
+    background: rgb(190, 166, 255);
+    background: linear-gradient(
+        90deg,
+        rgba(190, 166, 255, 1) 0%,
+        rgba(217, 206, 255, 1) 64%,
+        rgba(235, 229, 255, 1) 100%
+    );
+    color: #843DFF;
+    border: 1px solid #843DFF;
+    border-radius: 1.5rem;
+    padding: 2%;
+}
+
+
