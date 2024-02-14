@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+/* Otros estilos aquí */
+
+.background {
+    height: 10.5dvh;
+    width: 100%;
+    border-bottom: 1px solid black;
+    background: #D9CEFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.menuCont{
+    background: #5A03D5;
+    color: #D9CEFF;
+    margin: 0 4.5%;
+    margin-right: 0;
+}
+
+.btn{
+    color: #D9CEFF;
+    background: transparent;
+    border: 0;
+}
+
+.boxImg{
+    width: 30%;
+    aspect-ratio: 1/1;
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img{
+    height: 100%;
+    width: 100%;
+}
+
+.title{
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+}
+
+.mark{
+    display: flex;
+    justify-content: center;
+    width: 55%;
+}

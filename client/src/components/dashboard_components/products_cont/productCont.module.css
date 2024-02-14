@@ -1,0 +1,6 @@
+.background{
+    display: flex;
+    flex-direction: column;
+    background: red;
+    height: 100dvh;
+}

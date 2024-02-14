@@ -26,6 +26,7 @@ const Card = ({ elements }) => {
                         <img
                             src={image[0]}
                             alt={name}
+                            className={style.img}
                         />
                     </div>
                     <div className={style.cardCont} >

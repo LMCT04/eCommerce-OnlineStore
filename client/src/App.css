@@ -1,1 +1,8 @@
-
+:root {
+    --main-color: #5a03d5;
+    --white-color: #d9d9d9;
+    --main-dark: #2C0076;
+    --main-light: #9F75FF;
+    --grey-color: #8e8c8c;
+    --grey-light: #b3b2b2;
+}
