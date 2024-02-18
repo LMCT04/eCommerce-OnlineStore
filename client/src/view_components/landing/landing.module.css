@@ -1,0 +1,41 @@
+.background {
+    background: var(--white-color);
+    width: 100%;
+    display: flex;
+}
+
+.contentForm {
+    border-radius: 15px;
+    height: 70dvh;
+    width: 90%;
+    margin: 5% auto;
+    box-shadow: 0px 0px 10px 1.5px rgb(88, 86, 86);
+}
+
+.box1 {
+    height: 10%;
+    width: 100%;
+    border-end-start-radius: 15px;
+    border-end-end-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnCont {
+    height: 70%;
+    width: 95%;
+    border-top: 1px solid rgb(88, 86, 86);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.btn {
+    border: 0;
+    background: transparent;
+    font-size: 1rem;
+    text-decoration: underline;
+    color: rgb(29, 75, 174);
+    font-weight: 700;
+}
