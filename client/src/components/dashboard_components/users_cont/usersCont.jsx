@@ -10,11 +10,10 @@ const UsersCont = () => {
 
     useEffect(() => {
         dispatch(getUsers())
-    }, [])
+    }, [dispatch])
     
     const {users = [], isLoading} = useSelector((state) => state.user)
-
-    console.log(users);
+    console.log(isLoading);
 
     return (
         <>

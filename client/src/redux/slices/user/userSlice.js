@@ -15,8 +15,11 @@ export const userSlice = createSlice({
         setUsers: (state, action) => {
             state.isLoading = false;
             state.users = action.payload.users;
+        },
+        addUser: (state, action) => {
+            state.users.push(action.payload.user);
         }
     },
 });
 
-export const { starLoadingUsers, setUsers } = userSlice.actions;
+export const { starLoadingUsers, setUsers, addUser } = userSlice.actions;
