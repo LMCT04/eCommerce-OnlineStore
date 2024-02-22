@@ -4,6 +4,7 @@ import Landing from "./landing/landing";
 import Dashboard from "./dashboard/dashboard";
 import About from "./about/about";
 import Offers from "./offers/offers";
+import { FormProduct } from './forms'
 
 export {
     Store,
@@ -11,5 +12,6 @@ export {
     Landing,
     Dashboard,
     About,
-    Offers
+    Offers,
+    FormProduct
 }

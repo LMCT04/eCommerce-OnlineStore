@@ -1,77 +1,93 @@
 import React from "react";
 import style from "./navBar.module.css";
-import { NavLink, useNavigate } from "react-router-dom";
-import { AppBar, Menu, MenuItem } from "@mui/material";
-import { Menu as IconMenu, Search } from "@mui/icons-material";
 import logo from "../../../assets/LogoBag1.png";
-import { useState } from "react";
+import { Btn } from "../../compounds_components";
+import { Menu, MenuItem } from "@mui/material";
+import {Menu as IconMenu} from "@mui/icons-material";
+import {useNavigate} from 'react-router-dom'
 
 const NavBarDashboard = () => {
-    const navigate = useNavigate();
-    const [anchorEl, setAnchorEl] = useState(null);
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [anchorEl2, setAnchorEl2] = React.useState(null);
+    const navigate = useNavigate()
 
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
+    const handleClick = (e) => {
+        setAnchorEl(e.currentTarget);
+    }
+
+    const handleClick2 = (e) => {
+        setAnchorEl2(e.currentTarget);
+    }
 
     const handleClose = () => {
         setAnchorEl(null);
-    };
+    }
 
-    const toDashboard = () => {
-        navigate('/dashboard');
-        setAnchorEl(null);
-    };
+    const handleClose2 = () => {
+        setAnchorEl2(null);
+    }
+
+    const toCreateProduct = () => {
+        navigate('/dashboard/create-product')
+        setAnchorEl2(null);
+    }
 
     const toHome = () => {
-        navigate('/home');
-        setAnchorEl(null);
+        navigate('/home')
+        setAnchorEl(null)
     }
 
     return (
         <>
-            <div className={style.background}>
-                <AppBar
-                    sx={{
-                        backgroundColor: "#5A03D5",
-                        height: "100%",
-                        width: "100%",
-                        position: "static",
-                        display: "flex",
-                        flexDirection: "row",
-                        alignItems: "center",
-                    }}
-                >
-                    <div className={style.menuCont}>
-                        <button
-                            aria-controls="simple-menu"
-                            aria-haspopup="true"
-                            onClick={handleClick}
-                            className={style.btn}
-                        >
-                            <IconMenu sx={{fontSize:'2.5rem'}} />
-                        </button>
-                        <Menu
-                            id="simple-menu"
-                            anchorEl={anchorEl}
-                            open={Boolean(anchorEl)}
-                            onClose={handleClose}
-                        >
-                            <MenuItem onClick={handleClose}> Profile </MenuItem>
-                            <MenuItem onClick={handleClose}> Settings </MenuItem>
-                            <MenuItem onClick={toDashboard}> Dashboard </MenuItem>
-                            <MenuItem onClick={toHome}> Home </MenuItem>
-                        </Menu>
+            <div className={style.header}>
+                <div className={style.header__div_left}>
+                    <button
+                        aria-controls="simple-menu"
+                        aria-haspopup="true"
+                        onClick={handleClick}
+                        className={style.header__button}
+                    >
+                        <IconMenu sx={{fontSize:'2rem'}} />
+                    </button>
+                    <Menu
+                        id="simple-menu"
+                        anchorEl={anchorEl}
+                        open={Boolean(anchorEl)}
+                        onClose={handleClose}
+                    >
+                        <MenuItem onClick={handleClose} > Profile </MenuItem>
+                        <MenuItem onClick={toHome} > Home </MenuItem>
+                        <MenuItem onClick={handleClose} > Settings </MenuItem>
+                    </Menu>
+                </div>
+                <div className={style.header__div_center}>
+                    <div className={style.header__div_img}>
+                        <img src={logo} className={style.header__img} />
                     </div>
-                    <div className={style.mark}>
-                        <div className={style.boxImg}>
-                            <img src={logo} alt="logo" className={style.img} />
-                        </div>
-                        <div className={style.title}>
-                            <h1>Online Store</h1>
-                        </div>
+                    <div className={style.header__title}>
+                        <h1 className={style.header__h1}>Online Store</h1>
                     </div>
-                </AppBar>
+                </div>
+                <div className={style.header__div_right}>
+                    <Btn 
+                        theme="circle"
+                        ariaControls='create-menu'
+                        ariaHaspopup='true'
+                        onClick={handleClick2}
+                    >
+                        <Btn.Icon size="medium" />
+                    </Btn>
+                    <Menu
+                        id="create-menu"
+                        anchorEl={anchorEl2}
+                        open={Boolean(anchorEl2)}
+                        onClose={handleClose2}
+                    >
+                        <MenuItem> Create... </MenuItem>
+                        <hr />
+                        <MenuItem onClick={toCreateProduct} > Product </MenuItem>
+                    </Menu>
+                </div>
             </div>
         </>
     );

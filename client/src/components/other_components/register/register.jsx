@@ -2,7 +2,7 @@ import React from "react";
 import style from "./register.module.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
-import {createUser} from '../../../redux/slices/user'
+import { createUser } from '../../../redux/slices/user'
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
