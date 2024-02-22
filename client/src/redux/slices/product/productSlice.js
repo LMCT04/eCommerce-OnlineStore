@@ -15,8 +15,11 @@ export const productSlice = createSlice({
         setProducts: (state, action) => {
             state.isLoading = false
             state.products = action.payload.products;
+        },
+        addProduct: (state, action) => {
+            state.products.push(action.payload.product);
         }
     }
 })
 
-export const { starLoadingProducts, setProducts } = productSlice.actions;
+export const { starLoadingProducts, setProducts, addProduct } = productSlice.actions;

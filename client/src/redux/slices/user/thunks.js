@@ -17,11 +17,10 @@ export const createUser = (user) => {
 
         try {
             const response = await userApi.post("/", user);
-            console.log(response);
             const newUser = response.data;
             dispatch(addUser({ user: newUser }));
         } catch (error) {
-            alert('create user Error')
+            console.log('Error create User', error);
         }
     };
 };
