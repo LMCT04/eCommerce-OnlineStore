@@ -8,6 +8,8 @@ import {
     About,
     Offers,
     FormProduct,
+    FormCategory,
+    FormSubCategory
 } from "./view_components/index.js";
 import NavBar from "./components/other_components/navigation_bar/navBar.jsx";
 import NavBarDashboard from "./components/dashboard_components/navigation_bar/navBar.jsx";
@@ -19,13 +21,17 @@ function App() {
     const showNavBar =
         location.pathname !== "/" &&
         location.pathname !== "/dashboard" &&
-        location.pathname !== "/dashboard/create-product";
+        location.pathname !== "/dashboard/create-product" &&
+        location.pathname !== "/dashboard/create-category" &&
+        location.pathname !== "/dashboard/create-subcategory";
 
     const NavDashboard = location.pathname === "/dashboard";
 
     const ShowFooter =
         location.pathname !== "/dashboard" &&
-        location.pathname !== "/dashboard/create-product";
+        location.pathname !== "/dashboard/create-product" &&
+        location.pathname !== "/dashboard/create-category" &&
+        location.pathname !== "/dashboard/create-subcategory";
 
     return (
         <div className="App">
@@ -38,10 +44,9 @@ function App() {
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/offers" element={<Offers />} />
                 <Route path="/about" element={<About />} />
-                <Route
-                    path="/dashboard/create-product"
-                    element={<FormProduct />}
-                />
+                <Route path="/dashboard/create-product" element={<FormProduct />}/>
+                <Route path="/dashboard/create-category" element={<FormCategory />}/>
+                <Route path="/dashboard/create-subcategory" element={<FormSubCategory />}/>
             </Routes>
             <footer>{ShowFooter && <Footer />}</footer>
         </div>

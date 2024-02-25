@@ -12,11 +12,11 @@ const FormProduct = () => {
 
     return (
         <>
-            <div className={style.form__header}>
-                <a href="/dashboard" className={style.form__a}>
-                    <ArrowBackIosNew className={style.form__icon} />
+            <div className={style.header}>
+                <a href="/dashboard" className={style.header__a}>
+                    <ArrowBackIosNew className={style.header__icon} />
                 </a>
-                <h2 className={style.form__h2}> Create Product </h2>
+                <h2 className={style.header__h2}> Create Product </h2>
             </div>
             <div>
                 <Formik
@@ -68,7 +68,7 @@ const FormProduct = () => {
                         };
                         // logic create product
                         dispatch(createProduct(product));
-                        // navigate("/dashboard");
+                        navigate("/dashboard");
                     }}
                 >
                     {({ errors }) => (

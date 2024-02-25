@@ -15,8 +15,11 @@ export const subCategorySlice = createSlice({
         setSubCategories: (state, action) => {
             state.isLoadingSubCategory = false
             state.subcategories = action.payload.subcategories;
+        },
+        addSubCategory: (state, action) => {
+            state.subcategories.push(action.payload.subcategory);
         }
     }
 })
 
-export const { starLoadingSubCategory, setSubCategories } = subCategorySlice.actions;
+export const { starLoadingSubCategory, setSubCategories, addSubCategory } = subCategorySlice.actions;
