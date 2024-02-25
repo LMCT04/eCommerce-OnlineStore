@@ -32,6 +32,16 @@ const NavBarDashboard = () => {
         setAnchorEl2(null);
     }
 
+    const toCreateCategory = () => {
+        navigate('/dashboard/create-category')
+        setAnchorEl2(null);
+    }
+
+    const toCreateSubcategory = () => {
+        navigate('/dashboard/create-subcategory')
+        setAnchorEl2(null);
+    }
+
     const toHome = () => {
         navigate('/home')
         setAnchorEl(null)
@@ -86,6 +96,8 @@ const NavBarDashboard = () => {
                         <MenuItem> Create... </MenuItem>
                         <hr />
                         <MenuItem onClick={toCreateProduct} > Product </MenuItem>
+                        <MenuItem onClick={toCreateCategory} > Category </MenuItem>
+                        <MenuItem onClick={toCreateSubcategory} > SubCategory </MenuItem>
                     </Menu>
                 </div>
             </div>

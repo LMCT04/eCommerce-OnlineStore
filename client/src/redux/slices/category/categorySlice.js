@@ -15,8 +15,11 @@ export const categorySlice = createSlice({
         setCategories: (state, action) => {
             state.isLoadingCategory = false
             state.categories = action.payload.categories;
+        },
+        addCategory: (state, action) => {
+            state.categories.push(action.payload.category);
         }
     }
 })
 
-export const { starLoadingCategory, setCategories } = categorySlice.actions;
+export const { starLoadingCategory, setCategories, addCategory } = categorySlice.actions;

@@ -4,7 +4,7 @@ import Landing from "./landing/landing";
 import Dashboard from "./dashboard/dashboard";
 import About from "./about/about";
 import Offers from "./offers/offers";
-import { FormProduct } from './forms'
+import { FormProduct, FormCategory, FormSubCategory } from './forms'
 
 export {
     Store,
@@ -13,5 +13,7 @@ export {
     Dashboard,
     About,
     Offers,
-    FormProduct
+    FormProduct,
+    FormCategory,
+    FormSubCategory
 }
