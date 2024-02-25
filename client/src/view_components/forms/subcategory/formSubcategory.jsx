@@ -36,7 +36,7 @@ const FormSubCategory = () => {
                 <a href="/dashboard" className={style.header__a}>
                     <ArrowBackIosNew className={style.header__icon} />
                 </a>
-                <h2 className={style.header__h2}> Create SubCategory </h2>
+                <h2 className={style.header__h2}> Create Subcategory </h2>
             </div>
             <div>
                 <Formik
@@ -61,7 +61,7 @@ const FormSubCategory = () => {
                         }
 
                         // validate category
-                        if (values.CategoryId === '') {
+                        if (values.CategoryId === "") {
                             errors.CategoryId = "The field is required";
                         }
 
@@ -101,20 +101,23 @@ const FormSubCategory = () => {
                                 />
                             </div>
                             <div className={style.form__div}>
-                                <div className={style.form__div}>
-                                    <label
-                                        htmlFor="CategoryId"
-                                        className={style.form__label}
-                                    >
-                                        Category
-                                    </label>
+                                <label
+                                    htmlFor="CategoryId"
+                                    className={style.form__label}
+                                >
+                                    Category
+                                </label>
+                                <div className={style.form__div_select}>
                                     <Field
                                         className={style.form__select}
                                         id="CategoryId"
                                         name="CategoryId"
                                         as="select"
                                     >
-                                        <option className={style.form__option}  value=""></option>
+                                        <option
+                                            className={style.form__option}
+                                            value=""
+                                        ></option>
                                         {categories.map((category) => (
                                             <option
                                                 className={style.form__option}
@@ -125,15 +128,15 @@ const FormSubCategory = () => {
                                             </option>
                                         ))}
                                     </Field>
-                                    <ErrorMessage
-                                        name="CategoryId"
-                                        component={() => (
-                                            <div className={style.form__error}>
-                                                {errors.CategoryId}
-                                            </div>
-                                        )}
-                                    />
                                 </div>
+                                <ErrorMessage
+                                    name="CategoryId"
+                                    component={() => (
+                                        <div className={style.form__error}>
+                                            {errors.CategoryId}
+                                        </div>
+                                    )}
+                                />
                             </div>
                             <button
                                 type="submit"
