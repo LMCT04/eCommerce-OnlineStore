@@ -1,6 +1,5 @@
 import { productApi } from "../../../api/productApi";
-import { setProducts, starLoadingProducts, addProduct } from "./productSlice";
-import axios from 'axios'
+import { setProducts, starLoadingProducts, addProduct, updateStatus } from "./productSlice";
 
 export const getProducts = () => {
     return async (dispatch, getState) => {
@@ -15,12 +14,23 @@ export const getProducts = () => {
 export const createProduct = (product) => {
     return async (dispatch, getState) => {
         dispatch(starLoadingProducts());
-        console.log(product);
         try {
             const response = await productApi.post("/", product)
-            console.log(response);
             const newProduct = response.data;
             dispatch(addProduct({ product: newProduct }))
+        } catch (error) {
+            console.log('Error: ', error);
+        }
+    }
+}
+
+export const putStatus = (id, status) => {
+    return async (dispatch, getState) => {
+        dispatch(starLoadingProducts())
+        try {
+            const response = await productApi.put("/", { id, status })
+            const updateProduct = response.data;
+            dispatch(updateStatus({product: updateProduct}))
         } catch (error) {
             console.log('Error: ', error);
         }

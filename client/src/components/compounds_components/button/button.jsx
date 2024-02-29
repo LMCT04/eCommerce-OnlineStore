@@ -8,6 +8,7 @@ const Btn = ({
     onClick,
     ariaControls,
     ariaHaspopup,
+    styles,
     ...props
 }) => {
     // CSS Button
@@ -26,6 +27,7 @@ const Btn = ({
     return (
         <>
             <button
+                style={styles}
                 className={themeColor}
                 onClick={onClick}
                 aria-controls={ariaControls}

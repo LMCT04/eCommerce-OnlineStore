@@ -7,16 +7,16 @@ import {
     Switch,
 } from "@mui/material";
 
-const Acn = ({ children, nameProduct, ...props }) => {
+const Acn = ({ children, nameProduct, checked, onChange, ...props }) => {
     return (
         <>
             <Accordion className={style.acc}>
                 <AccordionSummary className={style.summary}>
                     <h2 className={style.name}> {nameProduct} </h2>
-                    <Switch />
                 </AccordionSummary>
                 <AccordionDetails className={style.details}>
                     {children}
+                    <Switch  checked={checked} onChange={onChange} />
                 </AccordionDetails>
             </Accordion>
         </>
