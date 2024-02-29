@@ -4,7 +4,7 @@ import { ArrowBackIosNew } from "@mui/icons-material";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { createProduct } from "../../../redux/slices/product";
+import { createProduct } from "../../../redux/slices/product"
 
 const FormProduct = () => {
     const dispatch = useDispatch();

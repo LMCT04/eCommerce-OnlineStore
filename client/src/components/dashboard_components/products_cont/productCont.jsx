@@ -12,7 +12,6 @@ const ProductCont = () => {
     }, [])
 
     const {products = [], isLoading} = useSelector((state) => state.product)
-
     console.log(products);
 
     return (

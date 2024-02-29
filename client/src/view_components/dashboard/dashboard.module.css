@@ -11,15 +11,15 @@
     height: 10dvh;
     border: 1px solid black;
     background: #fff;
-    margin: 5% 0;
+    margin-top: 5%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    overflow: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
 }
 
 .adminCont {
     width: 90%;
-    height: 130dvh;
-    margin: 5% 0;
-    margin-bottom: 10%;
+    height: 70dvh;
 }

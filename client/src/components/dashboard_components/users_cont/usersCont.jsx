@@ -13,7 +13,6 @@ const UsersCont = () => {
     }, [dispatch])
     
     const {users = [], isLoading} = useSelector((state) => state.user)
-    console.log(isLoading);
 
     return (
         <>
