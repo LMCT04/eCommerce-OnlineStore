@@ -22,7 +22,7 @@ const Btn = ({
     if (theme === "circle") {
         themeColor = style.btn__circle;
     }
-    // ---
+    //
 
     return (
         <>

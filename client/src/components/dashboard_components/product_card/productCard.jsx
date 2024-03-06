@@ -50,7 +50,7 @@ const ProductCard = ({ elements }) => {
     return (
         <>
             <article className={style.card}>
-                <Acn nameProduct={name} checked={isChecked} onChange={handleToggle}>
+                <Acn nameProduct={name} checked={isChecked} onChange={handleToggle} theme={isActive}>
                     <Acn.ImgBox src={image} />
                     <Acn.Description info={description} />
                     <Acn.Data data={price} />

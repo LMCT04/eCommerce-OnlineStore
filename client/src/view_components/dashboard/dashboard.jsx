@@ -1,53 +1,34 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import style from "./dashboard.module.css";
-import { Btn } from "../../components/compounds_components";
+import { SpaceDashboard } from "@mui/icons-material";
+import { SideBar } from "../../components/dashboard_components";
 import { UsersCont, ProductCont, SubcategoryCont, CategoryCont } from "../../components/dashboard_components";
 
 const Dashboard = () => {
     const [activeComponent, setActiveComponent] = useState(1);
 
-    const renderComponent = (componentNumber) => {
-        setActiveComponent(componentNumber);
+    const handleSidebar = (componenteNum) => {
+        setActiveComponent(componenteNum);
     };
 
     return (
         <>
-            <div className={style.background}>
-                <div className={style.btnCont}>
-                    <Btn
-                        theme={activeComponent === 1 ? "" : "secondary"}
-                        onClick={() => renderComponent(1)}
-                        styles={{margin: "0 1dvh"}}
-                    >
-                        <Btn.Title text="Users" />
-                    </Btn>
-                    <Btn
-                        theme={activeComponent === 2 ? "" : "secondary"}
-                        onClick={() => renderComponent(2)}
-                        styles={{margin: "0 2dvh"}}
-                    >
-                        <Btn.Title text="Products" />
-                    </Btn>
-                    <Btn
-                        theme={activeComponent === 3 ? "" : "secondary"}
-                        onClick={() => renderComponent(3)}
-                        styles={{margin: "0 2dvh"}}
-                    >
-                        <Btn.Title text="Subcategories" />
-                    </Btn>
-                    <Btn
-                        theme={activeComponent === 4 ? "" : "secondary"}
-                        onClick={() => renderComponent(4)}
-                        styles={{margin: "0 2dvh"}}
-                    >
-                        <Btn.Title text="Categories" />
-                    </Btn>
-                </div>
-                <div className={style.adminCont}>
-                    {activeComponent === 1 && <UsersCont />}
-                    {activeComponent === 2 && <ProductCont />}
-                    {activeComponent === 3 && <SubcategoryCont />}
-                    {activeComponent === 4 && <CategoryCont />}
+            <div className={style["dashboard"]}>
+                    <SideBar onClick={handleSidebar}/>
+                <div className={style["dashboard__container"]}>
+                    {activeComponent === 1 &&
+                        <div className={style["dashboard__title"]}>
+                        <span className={style["dashboard__title-span"]}>
+                            <SpaceDashboard className={style["dashboard__title-dashboardIcon"]}/>
+                        </span>
+                        <h1 className={style["dashboard__title-h1"]}>
+                            Dashboard
+                        </h1>
+                    </div>}
+                    {activeComponent === 2 && <UsersCont />}
+                    {activeComponent === 3 && <ProductCont />}
+                    {activeComponent === 4 && <SubcategoryCont />}
+                    {activeComponent === 5 && <CategoryCont />}
                 </div>
             </div>
         </>

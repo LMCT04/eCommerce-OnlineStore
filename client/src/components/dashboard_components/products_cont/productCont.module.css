@@ -1,5 +1,35 @@
-.background{
+.container{
     display: flex;
     flex-direction: column;
-    height: 100dvh;
+    height: auto;
+    width: 100%;
+}
+
+.container__title{
+    display: flex;
+    height: 9dvh;
+    width: 100%;
+    background: transparent;
+}
+
+.container__title-span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+
+.container__title-icon{
+    color: var(--main-color);
+    font-size: 3.5rem !important;
+}
+
+.container__title-h1{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: auto;
+    color: var(--main-color);
+    margin: 0;
 }

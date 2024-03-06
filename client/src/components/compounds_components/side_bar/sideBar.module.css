@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "DM Sans", sans-serif;
+    box-sizing: border-box;
+}
+
+.sidebar{
+    background: var(--main-color);
+    height: 100dvh;
+    width: 15dvw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0.4rem 0.8rem;
+    transition: width 0.5s ease, background 0.5s ease;
+}
+
+.sidebar-active{
+    /* background: var(--main-color); */
+    background: linear-gradient(
+        90deg,
+        rgba(90, 3, 213, 1) 30%,
+        rgba(121, 22, 255, .9) 55%,
+        rgba(132, 61, 255, .8) 80%
+    );
+    height: 100dvh;
+    width: 60dvw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0.4rem 0.8rem;
+    transition: width 0.5s ease, background 0.5s ease;
+}
+
+.sidebar__top{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    margin-top: 1.5dvh;
+    margin-bottom: 5dvh;
+}
+
+.sidebar__container-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar-active__container-btn{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sidebar__btn-open, .sidebar__btn-close{
+    width: auto;
+    height: auto;
+    border: 0;
+    background: transparent;
+}
+
+.sidebar__icon-open, .sidebar__icon-close{
+    color: var(--white-color);
+    font-size: 2.5rem !important;
+}
+
+.sidebar__logo{
+    width: 0%;
+    height: 5dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateX(-80px);
+    transition: opacity 0.3s ease, transform 0.6s ease;
+}
+
+.sidebar-active__logo{
+    width: 100%;
+    height: 5dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.sidebar__logo-containerImg{
+    height: 90%;
+    aspect-ratio: 1/1;
+}
+
+.sidebar__logo-img{
+    height: 100%;
+    width: 100%;
+}
+
+.sidebar__logo-containerH1{
+    display: flex;
+    align-items: center;
+}
+
+.sidebar__logo-h1{
+    font-size: 1.05rem;
+    color: var(--white-color);
+    width: 100%;
+    white-space: nowrap;
+}
+
+.sidebar__user{
+}
+
+.sidebar__ul{
+    list-style: none;
+}
+
+.sidebar__li{
+    display: flex;
+    margin: 3dvh auto;
+    width: 100%;
+    justify-content: center;
+}
+
+.sidebar__icon{
+    color: var(--white-color);
+    font-size: 2.2rem !important;
+    background: transparent;
+}
+
+.sidebar__a{
+    display: flex;
+    align-items: center;
+    color: var(--white-color);
+    text-decoration: none;
+    width: 100%;
+    background: transparent;
+    border: 0;
+}
+
+.sidebar__a-span{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.sidebar__nav-item{
+    opacity: 0;
+    width: 0%;
+    transform: translateX(-80px);
+    transition: opacity 0.45s ease, transform 0.5s ease;
+}
+
+.sidebar-active__nav-item{
+    width: auto;
+    padding: 0 1.5rem;
+    text-align: left;
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.45s ease
+}
+
+.sidebar__bottom{
+    display: flex;
+    position: absolute;
+    top: 95%;
+}
