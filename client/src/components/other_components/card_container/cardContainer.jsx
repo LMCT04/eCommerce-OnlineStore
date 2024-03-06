@@ -13,24 +13,22 @@ const CardContainer = () => {
     useEffect(() => {
         // dispatch( getUsers() )
         dispatch(getProducts());
-    }, []);
+    }, [dispatch]);
 
     return (
         <>
             <div className={style.background}>
                 <span> Loading: {isLoading ? "True" : "False"} </span>
                 <div className={style.cardsBox}>
-                    {
-                        products.length > 0 ? (
-                            products.map((product) => 
-                                <Card key={product.id} elements={product} />
-                            )
-                        ) : (
-                            <>
-                                Loading
-                            </>
-                        )
-                    }
+                    {products.length > 0 ? (
+                    products
+                        .filter((product) => product.isActive === true)
+                        .map((product) => (
+                            <Card key={product.id} elements={product} />
+                        ))
+                ) : (
+                    <>Loading</>
+                )}
                 </div>
             </div>
         </>

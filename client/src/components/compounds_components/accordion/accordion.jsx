@@ -7,12 +7,18 @@ import {
     Switch,
 } from "@mui/material";
 
-const Acn = ({ children, nameProduct, checked, onChange, ...props }) => {
+const Acn = ({ children, nameProduct, checked, onChange, theme, ...props }) => {
+    let modeTheme = style.mode__true
+    if(theme === false) {
+        modeTheme = style.mode__false
+    }
+    
     return (
         <>
             <Accordion className={style.acc}>
                 <AccordionSummary className={style.summary}>
                     <h2 className={style.name}> {nameProduct} </h2>
+                    <button className={modeTheme} disabled="disabled"/>
                 </AccordionSummary>
                 <AccordionDetails className={style.details}>
                     {children}

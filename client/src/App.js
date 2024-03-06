@@ -36,7 +36,7 @@ function App() {
     return (
         <div className="App">
             <header>{showNavBar && <NavBar />}</header>
-            <header>{NavDashboard && <NavBarDashboard />}</header>
+            {/* <header>{NavDashboard && <NavBarDashboard />}</header> */}
             <Routes>
                 <Route path="/" element={<Landing />} />
                 <Route path="/home" element={<Home />} />

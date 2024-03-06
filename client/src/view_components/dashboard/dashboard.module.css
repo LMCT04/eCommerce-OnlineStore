@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: var(--main-color);
 }
 
 .btnCont{
@@ -22,4 +23,45 @@
 .adminCont {
     width: 90%;
     height: 70dvh;
+}
+
+/*Nuevos estilos*/
+
+.dashboard{
+    height: 200dvh;
+}
+
+.dashboard__container{
+    background: var(--white-color);
+    height: 200dvh;
+    width: 85dvw;
+    margin-left: 15dvw;
+}
+
+.dashboard__title{
+    background: white;
+    height: 9dvh;
+    width: 100%;
+    display: flex;
+}
+
+.dashboard__title-span{
+    height: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard__title-dashboardIcon{
+    font-size: 3.5rem !important;
+    color: var(--main-color);
+}
+
+.dashboard__title-h1{
+    color: var(--main-color);
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
 }
