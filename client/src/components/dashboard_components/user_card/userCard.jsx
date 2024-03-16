@@ -24,12 +24,12 @@ const UserCard = ({ elements }) => {
                 <section className={style.infoCont}>
                     <h2 className={style.name}>{name}</h2>
                     <Dlg
-                        onClick={handleOpen}
                         open={open}
-                        onClose={handleClose}
-                        onClick1={handleClose}
+                        handleOpen={handleOpen}
+                        handleClose={handleClose}
                         title='User Profile'
                         btnTxt='More Info'
+                        typeButton='text'
                     >
                         <Dlg.ImgCont src={image} />
                         <Dlg.FullName text={name + ' ' + lastname} />

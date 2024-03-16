@@ -26,30 +26,29 @@ const ProductCont = () => {
                     <h1 className={style["container__title-h1"]}>Products</h1>
                 </div>
                 <div className={style["container__products"]}>
-                    {products.length > 0 ? (
-                        products
-                            .filter((product) => product.isActive === true)
-                            .map((product) => (
-                                <ProductCard
-                                    key={product.id}
-                                    elements={product}
-                                />
-                            ))
-                    ) : (
-                        <>Loading</>
-                    )}
-                    {products.length > 0 ? (
-                        products
-                            .filter((product) => product.isActive === false)
-                            .map((product) => (
-                                <ProductCard
-                                    key={product.id}
-                                    elements={product}
-                                />
-                            ))
-                    ) : (
-                        <>Loading</>
-                    )}
+                    <section className={style["container__section"]}>
+                        <div className={style["container__subtitle"]}>
+                            <h3 className={style["container__subtitle-h3"]}>
+                                All Products
+                            </h3>
+                        </div>
+                        <div>
+                            {products.length > 0 ? (
+                                products.filter(p => p.isActive === true).map(p => (
+                                    <ProductCard key={p.id} elements={p}/>
+                                ))
+                            ) : (
+                                <>loading</>
+                            )}
+                            {products.length > 0 ? (
+                                products.filter(p => p.isActive === false).map(p => (
+                                    <ProductCard key={p.id} elements={p}/>
+                                ))
+                            ) : (
+                                <>loading</>
+                            )}
+                        </div>
+                    </section>
                 </div>
             </div>
         </>

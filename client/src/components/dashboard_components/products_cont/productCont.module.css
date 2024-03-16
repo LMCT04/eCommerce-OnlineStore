@@ -33,3 +33,34 @@
     color: var(--main-color);
     margin: 0;
 }
+
+.container__products{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+.container__section{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 90%;
+    margin: 1rem 0;
+    border: 2px solid var(--main-color);
+}
+
+.container__subtitle{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background: var(--main-color);
+}
+
+.container__subtitle-h3{
+    display: inline;
+    width: 90%;
+    text-align: left;
+    color: var(--white-color);
+}

@@ -1,52 +1,101 @@
-.acc {
-    color: var(--white-color) !important;
+.details {
+  background: var(--white-color);
+  overflow: hidden;
+}
+
+.details[open] summary::before {
+  content: "-";
+}
+
+.details summary::before {
+  content: "+";
 }
 
 .summary {
-    background: var(--main-color) !important;
-    padding: 0 !important;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  height: 4dvh;
+  width: 96%;
+  margin: 0 auto;
+  justify-content: space-between;
 }
 
-.name{
-    margin: 0 2%;
-    font-weight: 400;
-    width: 76%;
+.summary__h4 {
+  display: flex;
+  width: 89%;
 }
 
-.details {
-    background: var(--grey-light);
-    color: var(--main-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.summary__status-active {
+  height: 40%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: green;
 }
 
-.imgBox {
-    height: 15dvh;
-    aspect-ratio: 1/1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.summary__status-inactive {
+  height: 40%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: red;
 }
 
-.img {
-    height: 90%;
-    width: 90%;
-    border: 1px solid var(--grey-color);
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin: 2% auto;
+  background: rgb(155, 155, 155, 0.5);
+  transition: max-height 0.3s ease-out;
 }
 
-.mode__true{
-    background: green;
-    height: 3dvh;
-    aspect-ratio: 1/1;
-    border: 0;
-    border-radius: 50%;
+.content__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 96%;
+  height: auto;
+  padding: 1% 2%;
+  margin: 2% 0;
+  background: rgb(155, 155, 155, .9);
 }
 
-.mode__false{
-    background: red;
-    height: 3dvh;
-    aspect-ratio: 1/1;
-    border: 0;
-    border-radius: 50%;
+.content__central {
+  display: flex;
+  align-items: center;
+  width: 96%;
+  height: auto;
+  padding: 1% 2%;
+  background: rgb(155, 155, 155, .9);
+}
+
+.content__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 96%;
+  height: auto;
+  padding: 1% 2%;
+  margin: 2% 0;
+  background: rgb(155, 155, 155, .9);
+}
+
+.image-div {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-img {
+  height: 100%;
+  width: 100%;
+}
+
+.info-div {
+  height: auto;
+  width: auto;
+  margin: auto auto;
 }

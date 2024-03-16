@@ -1,62 +1,90 @@
 import React from "react";
 import style from "./accordion.module.css";
-import {
-    Accordion,
-    AccordionSummary,
-    AccordionDetails,
-    Switch,
-} from "@mui/material";
+import { Switch } from '@mui/material'
 
-const Acn = ({ children, nameProduct, checked, onChange, theme, ...props }) => {
-    let modeTheme = style.mode__true
-    if(theme === false) {
-        modeTheme = style.mode__false
-    }
-    
-    return (
-        <>
-            <Accordion className={style.acc}>
-                <AccordionSummary className={style.summary}>
-                    <h2 className={style.name}> {nameProduct} </h2>
-                    <button className={modeTheme} disabled="disabled"/>
-                </AccordionSummary>
-                <AccordionDetails className={style.details}>
-                    {children}
-                    <Switch  checked={checked} onChange={onChange} />
-                </AccordionDetails>
-            </Accordion>
-        </>
-    );
+const Acn = ({ children, text, status, ...props }) => {
+  const summaryStatus = status
+    ? style["summary__status-active"]
+    : style["summary__status-inactive"];
+
+  return (
+    <>
+      <details className={style["details"]}>
+        <summary className={style["summary"]}>
+          <h4 className={style["summary__h4"]}>{text}</h4>
+          <div className={summaryStatus} />
+        </summary>
+        {children}
+      </details>
+    </>
+  );
 };
 
-const ImgBox = ({ children, src, ...props }) => (
+const Content = ({ children, ...props }) => {
+  return (
     <>
-        <div className={style.imgBox}>
-            <img src={src} alt="Product Img" className={style.img} />
-        </div>
+      <div className={style["content"]}>{children}</div>
     </>
-);
+  );
+};
 
-const Description = ({ children, info, ...props }) => (
+const Top = ({ children, productId, ...props }) => {
+  return (
     <>
-        <div className={style.descriptionCont}>
-            <div className={style.description}>
-                {info}
-            </div>
-        </div>
+      <div className={style["content__top"]}>
+        <h5>ProductId: {productId}</h5>
+        {children}
+      </div>
     </>
-);
+  );
+};
 
-const Data = ({ children, data, ...props }) => (
+const Central = ({ children, ...props }) => {
+  return (
     <>
-        <div className={style.data}>
-            {data}
-        </div>
+      <div className={style["content__central"]}>{children}</div>
     </>
-);
+  );
+};
 
-Acn.ImgBox = ImgBox;
-Acn.Description = Description;
-Acn.Data = Data;
+const Bottom = ({ children, ...props }) => {
+  return(
+    <>
+      <div className={style["content__bottom"]}>{children}</div>
+    </>
+  )
+};
+
+const Img = ({ children, src, styles, ...props }) => {
+  return (
+      <div className={style["image-div"]} style={styles}>
+        <img src={src} className={style["image-img"]} />
+      </div>
+  );
+};
+
+const Info = ({ children, text, styles, ...props }) => {
+  return (
+      <div className={style["info-div"]}>
+        <p style={styles}>{text}</p>
+      </div>
+  )
+}
+
+const SwitchItem = ({ children, checked, onChange, ...props }) => {
+  return (
+    <>
+      <Switch checked={checked} onChange={onChange} />
+    </>
+  )
+}
+
+Acn.Content = Content;
+Content.Top = Top;
+Content.Central = Central;
+Central.Img = Img;
+Central.Info = Info;
+Content.Bottom = Bottom;
+Bottom.SwitchItem = SwitchItem;
 
 export default Acn;
