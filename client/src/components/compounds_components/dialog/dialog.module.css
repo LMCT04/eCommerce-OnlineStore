@@ -1,61 +1,76 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
-@import url('../../../App.css');
-
-.btnClose {
-    background: transparent;
-    border: 0;
-    color: var(--white-color);
+.modal__bar {
+  display: flex;
+  align-items: center;
+  height: 8dvh;
+  width: 100%;
+  padding: 0 2.5%;
+  background: var(--violet-5a03d5);
+  color: var(--white-d9d9d9);
 }
 
-.title{
-    font-family: "DM Sans", sans-serif !important;
+.modal__title {
+  font-size: 1.5rem;
+  font-weight: 550;
+}
+
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  background: var(--white-d9d9d9);
+  padding: 0 !important;
+}
+
+.btnClose {
+  background: transparent;
+  border: 0;
+  color: var(--white-color);
 }
 
 .imgCont {
-    width: 80%;
-    aspect-ratio: 1/1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 3% 0;
-    margin-bottom: 6%;
+  width: 80%;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3% 0;
+  margin-bottom: 6%;
 }
 
 .img {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 2px var(--grey-color) solid;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px var(--grey-color) solid;
 }
 
 .userTxt {
-    background: var(--main-color);
-    color: var(--white-color);
-    height: 3.4dvh;
-    width: 90%;
-    display: flex;
-    align-items: center;
-    margin-bottom: 1%;
-    font-family: "DM Sans", sans-serif;
+  background: var(--main-color);
+  color: var(--white-color);
+  height: 3.4dvh;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1%;
 }
 
 .label {
-    margin-left: 2%;
+  margin-left: 2%;
 }
 
 .p {
-    margin: 0;
-    margin: 0 2%;
+  margin: 0;
+  margin: 0 2%;
 }
 
 .h1 {
-    font-size: 2.5rem;
-    font-family: "DM Sans", sans-serif;
-    text-align: center;
-    margin: 0;
-    margin-bottom: 3%;
-    color: var(--main-dark);
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 3%;
+  color: var(--main-dark);
 }
