@@ -1,57 +1,66 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 
-.button-normal{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: .3rem;
+.button-normal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem;
+}
+
+.button-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: var(--violet-5a03d5);
+  color: var(--white-d9d9d9);
 }
 
 .btnPrimary {
-    font-family: "DM Sans", sans-serif;
-    background: rgb(75, 5, 173);
-    background: linear-gradient(
-        90deg,
-        rgba(75, 5, 173, 1) 0%,
-        rgba(121, 22, 255, 1) 51%,
-        rgba(132, 61, 255, 1) 83%
-    );
-    color: #d9ceff;
-    border: 0;
-    border-radius: 1.5rem;
-    padding: 2.5%;
-    font-size: 0.65rem;
+  font-family: "DM Sans", sans-serif;
+  background: rgb(75, 5, 173);
+  background: linear-gradient(
+    90deg,
+    rgba(75, 5, 173, 1) 0%,
+    rgba(121, 22, 255, 1) 51%,
+    rgba(132, 61, 255, 1) 83%
+  );
+  color: #d9ceff;
+  border: 0;
+  border-radius: 1.5rem;
+  padding: 2.5%;
+  font-size: 0.65rem;
 }
 
 .h2 {
-    width: auto;
-    white-space: nowrap;
+  width: auto;
+  white-space: nowrap;
 }
 
 .btnSecondary {
-    font-family: "DM Sans", sans-serif;
-    background: rgb(190, 166, 255);
-    background: linear-gradient(
-        90deg,
-        rgba(190, 166, 255, 1) 0%,
-        rgba(217, 206, 255, 1) 64%,
-        rgba(235, 229, 255, 1) 100%
-    );
-    color: #843DFF;
-    border: 1px solid #843DFF;
-    border-radius: 1.5rem;
-    padding: 2%;
-    font-size: 0.65rem;
+  font-family: "DM Sans", sans-serif;
+  background: rgb(190, 166, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(190, 166, 255, 1) 0%,
+    rgba(217, 206, 255, 1) 64%,
+    rgba(235, 229, 255, 1) 100%
+  );
+  color: #843dff;
+  border: 1px solid #843dff;
+  border-radius: 1.5rem;
+  padding: 2%;
+  font-size: 0.65rem;
 }
 
-.btn__circle{
-    background: var(--main-dark);
-    color: var(--white-color);
-    border: 0;
-    border-radius: 50%;
-    width: 60%;
-    height: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.btn__circle {
+  background: var(--main-dark);
+  color: var(--white-color);
+  border: 0;
+  border-radius: 50%;
+  width: 60%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

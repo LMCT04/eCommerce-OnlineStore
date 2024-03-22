@@ -42,27 +42,20 @@ const Dlg = ({
   return (
     <>
       { renderButton() }
-      <Dialog fullScreen open={open} onClose={handleClose} {...props}>
-        <div>
-          <Btn onClick={handleClose}>
-            <Btn.ArrowBackIcon />
+      <Dialog 
+        fullScreen open={open}
+        onClose={handleClose}
+        {...props}
+      >
+        <div className={style["modal__bar"]}>
+          <Btn onClick={handleClose} theme='button-bar'>
+            <Btn.ArrowBackIcon styles={{fontSize: '2.5rem'}} />
           </Btn>
-          <DialogTitle
-            sx={{ fontSize: "1.2rem", fontWeight: "550" }}
-            className={style.title}
-          >
+          <DialogTitle className={style["modal__title"]}>
             {title}
           </DialogTitle>
         </div>
-        <DialogContent
-          sx={{
-            background: "#d9d9d9",
-            marginTop: "8dvh",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
+        <DialogContent className={style["modal__content"]}>
           {children}
         </DialogContent>
       </Dialog>

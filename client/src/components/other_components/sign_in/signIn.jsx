@@ -8,12 +8,29 @@ import { useNavigate } from "react-router-dom";
 const SignIn = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const users = useSelector((state) => state.user.users);
 
     useEffect(() => {
         dispatch(getUsers());
     }, [dispatch]);
 
-    const users = useSelector((state) => state.user.users);
+    const handleSignIn = (values, { resetForm }) => {
+        // Reset the form
+        resetForm();
+
+        const userFound = users.find(user =>
+            user.mail === values.email &&
+            user.password === values.password)
+        if (userFound) {
+            localStorage.setItem('account', JSON.stringify(userFound))
+            alert("Welcome");
+            navigate("/home");
+        } else {
+            alert("user not found");
+        }
+    }
+    
+
 
     return (
         <>
@@ -46,22 +63,7 @@ const SignIn = () => {
 
                     return errors;
                 }}
-                onSubmit={(values, { resetForm }) => {
-                    resetForm();
-
-                    // logic compare
-                    const userFound = users.find(
-                        (user) =>
-                            user.mail === values.email &&
-                            user.password === values.password
-                    );
-                    if (userFound) {
-                        alert("Welcome");
-                        navigate("/home");
-                    } else {
-                        alert("user not found");
-                    }
-                }}
+                onSubmit={handleSignIn}
             >
                 {({ errors }) => (
                     <Form className={style.form}>
